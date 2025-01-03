@@ -46,3 +46,9 @@ La liste des compositions de l'interface de l'application :
 - Map
 - header, footer
 - Trip Header
+- Trip comments
+- Trip notes
+
+## Diagramme BDD
+
+https://drawsql.app/teams/agiliteach/diagrams/dailytrip
