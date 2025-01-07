@@ -4,37 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: "Inter", sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "Roboto Condensed", sans-serif;
+            letter-spacing: .01rem;
+            color: #0c274e;
+        }
+        .btn {
+            font-family: "Roboto Condensed", sans-serif;
+            font-weight: 300;
+            text-decoration: none;
+            background-color: #fba708;
+            font-size: 1.35rem;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+        .animate-cloud {
+            animation: clouds 5s linear infinite;
+        }
+        @keyframes clouds {
+            0% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(-5%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+    </style>
 </head>
-<body>
-    <div class="relative grid place-items-center max-w-2xl h-[620px] mx-auto">
-        <div class="absolute z-60 top-20 flex items-center justify-between w-full h-[350px]">
-            <img src="./cloud.png" alt="cloud 1" class="place-self-end" width="180">
-            <img src="./cloud.png" alt="cloud 2" class="place-self-start" width="100">
-            <img src="./cloud.png" alt="cloud 3" class="place-self-end" width="60">
-            <img src="./cloud.png" alt="cloud 4" class="" width="170">
+<body class="bg-sky-50">
+    <div class="relative grid place-items-center max-w-2xl h-[620px] mx-auto mb-60">
+        <div class="absolute z-50 top-20 flex items-center justify-between w-full h-[230px]">
+            <img src="./cloud.png" alt="cloud 1" class="place-self-end drop-shadow-xl brightness-125 animate-cloud" width="180">
+            <img src="./cloud.png" alt="cloud 2" class="place-self-start drop-shadow-xl brightness-125 animate-cloud" width="100">
+            <img src="./cloud.png" alt="cloud 3" class="place-self-end drop-shadow-xl brightness-125 animate-cloud" width="80">
+            <img src="./cloud.png" alt="cloud 4" class="drop-shadow-xl brightness-125 animate-cloud" width="150">
         </div><!-- Clouds -->
-        <div class="absolute z-50 -bottom-64">
+        <div class="absolute z-40 -bottom-64">
             <img src="./dailytrip.svg" alt="logo dailytrip" class="w-full h-full">
         </div><!-- Logo -->
-        <div class="absolute -bottom-28 bg-white blur-2xl h-72 w-44 rounded-full z-40"></div><!-- Background -->
-        <div class="relative z-40 w-full h-full">
+        <div class="absolute -bottom-28 bg-white blur-2xl h-72 w-44 rounded-full z-30"></div><!-- Background -->
+        <div class="relative z-30 w-full h-full">
             </div>
             <div 
-                class="absolute z-20 left-48 w-[280px] h-[400px] rounded-2xl shadow-lg bg-center bg-cover"
+                class="absolute z-10 left-48 w-[280px] h-[400px] rounded-2xl shadow-lg bg-center bg-cover"
                 style="background-image: url('./images/vtt.jpg');"
             ></div><!-- Image Top -->
             <div class="flex justify-between items-center absolute w-full bottom-0">
                 <div 
-                    class="z-10 right-0  w-[280px] h-[400px] rounded-2xl shadow-lg bg-center bg-cover"
+                    class="z-0 right-0  w-[280px] h-[400px] rounded-2xl shadow-lg bg-center bg-cover"
                     style="background-image: url('./images/roadtrip.jpg');"
                 ></div><!-- Image left -->
                 <div 
-                    class="z-30 left-0  w-[280px] h-[400px] rounded-2xl shadow-lg bg-center bg-cover"
+                    class="z-20 left-0  w-[280px] h-[400px] rounded-2xl shadow-lg bg-center bg-cover"
                     style="background-image: url('./images/desert.jpg');"
                 ></div><!-- Image right -->
             </div>
         </div><!-- Image Container -->
     </div><!-- Component Container -->
+
+    <div class="">
+        <div class="text-center">
+            <h1 class="lg:text-7xl font-bold uppercase">
+                En route pour<br><span class="lg:text-8xl">l'aventure</span>
+            </h1>
+            <br>
+            <!-- Zoom in on hover -->
+            <a href="#" class="btn hover:text-white hover:bg-[#0c274e] hover:shadow-lg">
+                C'est parti
+            </a>
+        </div>
+    </div>
 </body>
 </html>
