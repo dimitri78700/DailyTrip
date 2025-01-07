@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="relative grid place-items-center max-w-2xl h-[620px] mx-auto">
+        <div class="absolute z-60 top-20 flex items-center justify-between w-full h-[350px]">
+            <img src="./cloud.png" alt="cloud 1" class="place-self-end" width="180">
+            <img src="./cloud.png" alt="cloud 2" class="place-self-start" width="100">
+            <img src="./cloud.png" alt="cloud 3" class="place-self-end" width="60">
+            <img src="./cloud.png" alt="cloud 4" class="" width="170">
+        </div><!-- Clouds -->
+        <div class="absolute z-50 -bottom-64">
+            <img src="./dailytrip.svg" alt="logo dailytrip" class="w-full h-full">
+        </div><!-- Logo -->
+        <div class="absolute -bottom-28 bg-white blur-2xl h-72 w-44 rounded-full z-40"></div><!-- Background -->
+        <div class="relative z-40 w-full h-full">
+            </div>
+            <div 
+                class="absolute z-20 left-48 w-[280px] h-[400px] rounded-2xl shadow-lg bg-center bg-cover"
+                style="background-image: url('./images/vtt.jpg');"
+            ></div><!-- Image Top -->
+            <div class="flex justify-between items-center absolute w-full bottom-0">
+                <div 
+                    class="z-10 right-0  w-[280px] h-[400px] rounded-2xl shadow-lg bg-center bg-cover"
+                    style="background-image: url('./images/roadtrip.jpg');"
+                ></div><!-- Image left -->
+                <div 
+                    class="z-30 left-0  w-[280px] h-[400px] rounded-2xl shadow-lg bg-center bg-cover"
+                    style="background-image: url('./images/desert.jpg');"
+                ></div><!-- Image right -->
+            </div>
+        </div><!-- Image Container -->
+    </div><!-- Component Container -->
+</body>
+</html>
