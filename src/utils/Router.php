@@ -41,9 +41,10 @@ class Router
      */
     public function goTo(): void
     {
-        try {
-            require_once './src/views' . $this->path . '.html.php';
-        } catch (\Exception $e) {
+        $view = './src/views' . $this->path . '.html.php';
+        if(file_exists($view)) {
+            require_once $view;
+        } else {
             require_once './src/views/404.html.php';
         }
     }
