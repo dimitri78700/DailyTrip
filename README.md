@@ -52,3 +52,18 @@ La liste des compositions de l'interface de l'application :
 ## Diagramme BDD
 
 https://drawsql.app/teams/agiliteach/diagrams/dailytrip
+
+
+## Homepage
+
+Navigation
+Section hero
+Section des trips les plus populaires
+Section chiffres : avec [counter.js](https://tombruijn.github.io/counter.js/) et inpiré de [algolia](https://www.algolia.com/)
+- Nombre de trips
+- Nombre de km cumulés
+- Nombre de commentaires
+- Nombre de partages
+- Nombre de photos publiées
+Section des régions les plus visitées
+Footer
