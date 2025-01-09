@@ -39,6 +39,8 @@ try {
             `category_id` INT NOT NULL,
             `status` INT NOT NULL,
             PRIMARY KEY (`id`)
+            FOREIGN KEY (`localisation_id`) REFERENCES `localisation`(`id`)
+            FOREIGN KEY (`category_id`) REFERENCES `category`(`id`)
         );",
 
         // Ajout de la table `category` 
@@ -65,6 +67,7 @@ try {
             `point` VARCHAR(255) NOT NULL,
             `localisation_id` INT NOT NULL,
             PRIMARY KEY (`id`)
+            FOREIGN KEY (`localisation_id`) REFERENCES `localisation`(`id`)
         );",
 
         // Ajout de la table `review`
@@ -75,6 +78,7 @@ try {
             `email` VARCHAR(255) NOT NULL,
             `trip_id` INT NOT NULL,
             PRIMARY KEY (`id`)
+            FOREIGN KEY (`trip_id`) REFERENCES `trips`(`id`)
         );",
 
         // Ajout de la table `rating`
@@ -84,6 +88,7 @@ try {
             `ip_address` VARCHAR(255) NOT NULL,
             `trip_id` INT NOT NULL,
             PRIMARY KEY (`id`)
+            FOREIGN KEY (`trip_id`) REFERENCES `trips`(`id`)
         );",
     ];
     
@@ -97,36 +102,22 @@ try {
         }
     }
     
-    // Ajout des clés étrangères
-    $constraints = [
-        // TODO: Ajoutez vos requêtes SQL de contraintes ici
+ // Ajout des clés étrangères
+ $constraints = [
+    
+    // contraintes de clé étrangère pour la table `trips`
+    "ALTER TABLE `trips` ADD FOREIGN KEY (`localisation_id`) REFERENCES `localisation`(`id`)",
+    "ALTER TABLE `trips` ADD FOREIGN KEY (`category_id`) REFERENCES `category`(`id`)",
 
-        // Contrainte pour `trips.localisation_id`
-        "ALTER TABLE `trips` 
-        ADD CONSTRAINT `fk_trips_localisation` FOREIGN KEY (`localisation_id`) REFERENCES `localisation`(`id`) 
-        ON DELETE CASCADE ON UPDATE CASCADE;",
-        
-        // Contrainte pour `trips.category_id`
-        "ALTER TABLE `trips` 
-        ADD CONSTRAINT `fk_trips_category` FOREIGN KEY (`category_id`) REFERENCES `category`(`id`) 
-        ON DELETE CASCADE ON UPDATE CASCADE;",
-        
-        // Contrainte pour `poi.localisation_id`
-        "ALTER TABLE `poi` 
-        ADD CONSTRAINT `fk_poi_localisation` FOREIGN KEY (`localisation_id`) REFERENCES `localisation`(`id`) 
-        ON DELETE CASCADE ON UPDATE CASCADE;",
-        
-        // Contrainte pour `review.trip_id`
-        "ALTER TABLE `review` 
-        ADD CONSTRAINT `fk_review_trip` FOREIGN KEY (`trip_id`) REFERENCES `trips`(`id`) 
-        ON DELETE CASCADE ON UPDATE CASCADE;",
-        
-        // Contrainte pour `rating.trip_id`
-        "ALTER TABLE `rating` 
-        ADD CONSTRAINT `fk_rating_trip` FOREIGN KEY (`trip_id`) REFERENCES `trips`(`id`) 
-        ON DELETE CASCADE ON UPDATE CASCADE;",
-       
-    ];
+    // contrainte de clé étrangère pour la table `poi`
+    "ALTER TABLE `poi` ADD FOREIGN KEY (`localisation_id`) REFERENCES `localisation`(`id`)",
+
+    // contrainte de clé étrangère pour la table `review`
+    "ALTER TABLE `review` ADD FOREIGN KEY (`trip_id`) REFERENCES `trips`(`id`)",
+
+    // contrainte de clé étrangère pour la table `rating`
+    "ALTER TABLE `rating` ADD FOREIGN KEY (`trip_id`) REFERENCES `trips`(`id`)",
+];
     
     // Exécution des contraintes de clés étrangères
     foreach ($constraints as $constraintSql) {
