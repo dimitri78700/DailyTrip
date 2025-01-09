@@ -2,8 +2,8 @@
 require_once 'vendor/autoload.php';
 
 // Connexion à la base de données MySQL
-$host = 'localhost:3307';
-$dbname = 'dailytrip';
+$host = 'localhost:3308';
+$dbname = 'dailytrip_0';
 $username = 'root';  // Remplacez par votre nom d'utilisateur
 $password = '';      // Remplacez par votre mot de passe
 $dsn = "mysql:host=$host;dbname=$dbname;charset=utf8mb4";

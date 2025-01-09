@@ -10,6 +10,7 @@ include_once './src/views/components/home-cta.html.php';
 include_once './src/views/components/popular-trips.html.php';
 include_once './src/views/components/data-counter.html.php';
 // include_once './components/testimonials.html.php';
+include_once './src/views/components/database.html.php';
 
 // Footer loading
 include_once './src/views/components/footer.html.php';
